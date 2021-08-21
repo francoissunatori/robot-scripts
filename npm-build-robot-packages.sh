@@ -1,3 +1,5 @@
+#! /bin/bash
+
 cd ~/Documents/robot-components && \
 npm run build:watch & \
 cd ~/Documents/machine-app-components && \
