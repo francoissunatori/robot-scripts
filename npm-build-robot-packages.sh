@@ -1,7 +1,6 @@
-cd ../robot-components && \
+cd ~/Documents/robot-components && \
 npm run build:watch & \
-cd ../machine-app-components && \
+cd ~/Documents/machine-app-components && \
 npm run build:watch & \
-cd ../robot-motion-simulation-apis && \
+cd ~/Documents/robot-motion-simulation-apis && \
 npm run build:watch
-

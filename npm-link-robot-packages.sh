@@ -1,14 +1,26 @@
-cd ../robot-components && \
+cd ~/Documents/robot-components && \
 npm i && \
-npm link && \
+if [ "$robot_components" = local ]
+then
+  npm link && \
+  cd ~/Documents/vention_assembler/client/vse && \
+  npm link @ventionco/robot-components
+fi
+
 cd ../machine-app-components && \
 npm i && \
-npm link && \
+if [ "$machine_app_components" = local ]
+then
+  npm link && \
+  cd ~/Documents/vention_assembler/client && \
+  npm link @ventionco/machine-app-components
+fi
+
 cd ../robot-motion-simulation-apis && \
 npm i && \
-npm link && \
-cd ../vention_assembler/client && \
-npm link @ventionco/robot-motion-simulation-apis && \
-npm link @ventionco/machine-app-components && \
-cd ./vse && \
-npm link @ventionco/robot-components
+if [ "$robot_motion_simulation_apis" = local ]
+then
+  npm link && \
+  cd ~/Documents/vention_assembler/client && \
+  npm link @ventionco/robot-motion-simulation-apis
+fi
