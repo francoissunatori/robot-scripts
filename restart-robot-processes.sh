@@ -24,7 +24,7 @@ then
 fi
 cd ~/Documents/scripts
 
-gnome-terminal --tab --title="rails" --command="bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/vention_rails_docker && ./docker/run.sh start_run_with_host_assembler ~/Documents/vention_assembler/client/dist/ 6g;'"
+gnome-terminal --tab --title="rails" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/vention_rails_docker && ./docker/run.sh start_run_with_host_assembler ~/Documents/vention_assembler/client/dist/ 6g;'"
 
 if [ "$mm_execution_engine" = "local" ]
 then
@@ -32,10 +32,10 @@ then
   printf 'EXECUTION_ENGINE_HOST=http://localhost:3100' >> .env
   cd ~/Documents/scripts
 
-  gnome-terminal --tab --title="execution-engine" --command="bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/mm-execution-engine && npm run simulate-cad;'"
+  gnome-terminal --tab --title="execution-engine" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/mm-execution-engine && npm run simulate-cad;'"
 fi
 
-gnome-terminal --tab --title="robot-packages" --command="bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/scripts && bash npm-link-robot-packages.sh && bash npm-build-robot-packages.sh;'"
+gnome-terminal --tab --title="robot-packages" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/scripts && bash npm-link-robot-packages.sh && bash npm-build-robot-packages.sh;'"
 
 if [ "$vention_ros" = "local" ]
 then
@@ -43,7 +43,7 @@ then
   printf '\nVENTION_ROS_ENV=development' >> .env
   cd ~/Documents/scripts
 
-  gnome-terminal --tab --title="ros" --command="bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/vention_ros/melodic && bash run-dev.sh;'"
+  gnome-terminal --tab --title="ros" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/vention_ros/melodic && bash run-dev.sh;'"
 fi
 
-gnome-terminal --tab --title="assembler" --command="bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/vention_assembler/client && npm run dev;'"
+gnome-terminal --tab --title="assembler" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/vention_assembler/client && npm run dev;'"
