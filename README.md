@@ -7,3 +7,4 @@
   ```
   <name of the repo (- become _)>=local
   ```
+  for each repo that we want in its local environment
