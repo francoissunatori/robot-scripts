@@ -22,7 +22,9 @@ if [ -f .env ]
 then
   rm .env
 fi
-cd ~/Documents/scripts
+
+cd ~/Documents/vention_assembler/client && npm i
+cd ~/Documents/vention_assembler/client/vse && npm i
 
 gnome-terminal --tab --title="rails" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/vention_rails_docker && ./docker/run.sh start_run_with_host_assembler ~/Documents/vention_assembler/client/dist/ 6g;'"
 
@@ -30,7 +32,6 @@ if [ "$mm_execution_engine" = "local" ]
 then
   cd ~/Documents/vention_assembler/client
   printf 'EXECUTION_ENGINE_HOST=http://localhost:3100' >> .env
-  cd ~/Documents/scripts
 
   gnome-terminal --tab --title="execution-engine" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/mm-execution-engine && npm run simulate-cad;'"
 fi
@@ -41,7 +42,6 @@ if [ "$vention_ros" = "local" ]
 then
   cd ~/Documents/vention_assembler/client
   printf '\nVENTION_ROS_ENV=development' >> .env
-  cd ~/Documents/scripts
 
   gnome-terminal --tab --title="ros" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/vention_ros/melodic && bash run-dev.sh;'"
 fi
