@@ -44,22 +44,16 @@ fi
 if [ "$robot_components" = "local" ]
 then
   gnome-terminal --tab --title="robot-components" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/scripts && bash npm-link-robot-components.sh && bash npm-build-robot-components.sh;'"
-else
-  . npm-unlink-robot-components.sh
 fi
 
 if [ "$robot_motion_simulation_apis" = "local" ]
 then
   gnome-terminal --tab --title="robot-motion-simulation-apis" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/scripts && bash npm-link-robot-motion-simulation-apis.sh && bash npm-build-robot-motion-simulation-apis.sh;'"
-else
-  . npm-unlink-robot-motion-simulation-apis.sh
 fi
 
 if [ "$machine_app_components" = "local" ]
 then
   gnome-terminal --tab --title="machine-app-components" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/scripts && bash npm-link-machine-app-components.sh && bash npm-build-machine-app-components.sh;'"
-else
-  . npm-unlink-machine-app-components.sh
 fi
 
 if [ "$vention_ros" = "local" ]
