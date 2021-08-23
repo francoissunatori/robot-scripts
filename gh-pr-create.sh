@@ -1,3 +1,5 @@
+#! /bin/bash
+
 cd ~/Documents/vention_ros
 gh pr create --base robot-simulation --reviewer peterkaniostos --reviewer aeciolevy --reviewer bethany-vention
 cd ~/Documents/vention_assembler/client --reviewer peterkaniostos --reviewer aeciolevy --reviewer bethany-vention

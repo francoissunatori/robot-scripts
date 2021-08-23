@@ -1,3 +1,5 @@
+#! /bin/bash
+
 cd ~/Documents/vention_ros
 git checkout robot-simulation && git pull && git checkout -b robot-simulation-$1
 cd ~/Documents/vention_assembler/client
