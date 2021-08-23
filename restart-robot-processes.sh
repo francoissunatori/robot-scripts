@@ -27,6 +27,9 @@ fi
 
 cd ~/Documents/vention_assembler/client && npm i
 cd ~/Documents/vention_assembler/client/vse && npm i
+cd ~/Documents/robot-components && npm i
+cd ~/Documents/robot-motion-simulation-apis && npm i
+cd ~/Documents/machine-app-components && npm i
 
 gnome-terminal --tab --title="rails" -- /bin/sh -c "bash -c 'endstart() { exec bash; }; trap endstart INT; cd ~/Documents/vention_rails_docker && ./docker/run.sh start_run_with_host_assembler ~/Documents/vention_assembler/client/dist/ 6g;'"
 
